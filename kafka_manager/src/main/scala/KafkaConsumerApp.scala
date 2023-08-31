@@ -21,10 +21,12 @@ object KafkaConsumerApp extends App {
 
   val consumer = new KafkaConsumer(property)
   val topic = config.topicName
+  val topicName_0 = "src_test_topic"
+  val topicName_1 = "dst_test_topic"
 
   try {
-    consumer.assign(List(new TopicPartition(topic, 0)).asJava)
-    consumer.seekToBeginning(List(new TopicPartition(topic, 0)).asJava)
+    consumer.assign(List(new TopicPartition(topicName_1, 0)).asJava)
+    consumer.seekToBeginning(List(new TopicPartition(topicName_1, 0)).asJava)
     while (true) {
       val records = consumer.poll(Duration.ofMillis(100)).asScala
       for (record <- records) {

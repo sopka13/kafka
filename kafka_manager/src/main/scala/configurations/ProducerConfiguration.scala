@@ -8,8 +8,8 @@ case class ProducerConfiguration(brokers: String,
 
 object ProducerConfiguration {
   def apply(config: Config): ProducerConfiguration = ProducerConfiguration(
-    brokers =   config.getString("kafka.brokers"),
-    topicName = config.getString("kafka.topicName"),
-    timeout =   config.getLong  ("kafka.timeout")
+    brokers =   config.getString("kafka.src.brokers"),
+    topicName = config.getString("kafka.src.topicName"),
+    timeout =   config.getLong  ("kafka.src.timeout")
   )
 }

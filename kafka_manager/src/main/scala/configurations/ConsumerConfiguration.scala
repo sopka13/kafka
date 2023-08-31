@@ -9,9 +9,9 @@ case class ConsumerConfiguration(brokers: String,
 
 object ConsumerConfiguration {
   def apply(config: Config): ConsumerConfiguration = ConsumerConfiguration(
-    brokers =   config.getString("kafka.brokers"),
-    groupId =   config.getString("kafka.groupId"),
-    topicName = config.getString("kafka.topicName"),
-    timeout =   config.getLong  ("kafka.timeout")
+    brokers =   config.getString("kafka.dst.brokers"),
+    groupId =   config.getString("kafka.dst.groupId"),
+    topicName = config.getString("kafka.dst.topicName"),
+    timeout =   config.getLong  ("kafka.dst.timeout")
   )
 }
