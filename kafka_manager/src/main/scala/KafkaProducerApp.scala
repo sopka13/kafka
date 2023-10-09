@@ -21,7 +21,7 @@ object KafkaProducerApp extends App {
   try {
     for (i <- 0 to 100000000) {
       println(s"send message number $i")
-      producer.send(new ProducerRecord(topic, s"message $i", s"value $i"))
+      producer.send(new ProducerRecord(topic, s"message $i", s"vALuE $i"))
       sleep(1000)
     }
   }finally {
